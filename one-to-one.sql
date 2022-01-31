@@ -1,5 +1,10 @@
-create table people(
+create table animals(
 	id serial primary key,
 	name varchar(255),
-	married int references people(id) unique
+	animals_id int references animals_id(id) unique
+);
+
+create table animals_id(
+	id serial primary key,
+	number int
 );
