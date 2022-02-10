@@ -18,9 +18,13 @@ insert into animal(name, color_id) values ('bear', 2);
 insert into animal(name, color_id) values ('crocodile', 3);
 insert into animal(name) values ('frog');
 
-select c.name as цвет from color as c;
+select a.name as животное, c.name as цвет 
+from animal as a join color as c on a.color_id = c.id
+where a.name = 'horse';
 
-select a.name as животное from animal as a;
+select a.name as животное, c.name as цвет 
+from animal as a join color as c on a.color_id = c.id
+where c.name = 'black';
 
 select a.name as животное, c.name as цвет 
 from animal as a join color as c on a.color_id = c.id;
