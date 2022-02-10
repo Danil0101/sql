@@ -50,11 +50,9 @@ from product p
 where p.expired_date < current_date
 ;
 
-select p.name, p.price 
-from product p
-order by p.price DESC 
-limit 1
-;
+select name, price
+from product 
+where price = (select max(price) from product);
 
 select t.name as type, count(t.name) as amount
 from product p
