@@ -12,9 +12,9 @@ create table transmission(
 
 create table car(
 	id serial primary key,
-	car_body_id int references car_body(id) not null unique,
-	engine_id int references engine(id) not null unique,
-	transmission_id int references transmission(id) not null unique
+	car_body_id int references car_body(id) not null,
+	engine_id int references engine(id) not null,
+	transmission_id int references transmission(id) not null
 );
 
 insert into car_body default values;
